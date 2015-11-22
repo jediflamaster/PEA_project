@@ -16,5 +16,7 @@
 #include <time.h>
 
 #include <ctime>
-
+#include "Salesman.h"
+#include "Generator.h"
+#include "SAsolver.h"
 // TODO: reference additional headers your program requires here

@@ -6,19 +6,13 @@ class SAsolver {
 private:
 
 	int solution;
-	int *sequence;
-	int count_of;
-	int ** matrix;
 	float T;
 
 public:
 	float pfunc(int, int);
-	SAsolver(int towncount);
+	SAsolver();
 	~SAsolver();
-	void solve(float Tstart, float Tend, float falloff);
+	void solve(float Tstart, float Tend, float falloff, Salesman &problemref);
 	void load(std::string);
 	int getsolution();
-	int* getsequence();
-	void swap(int, int);
-	int currentcost();
 };

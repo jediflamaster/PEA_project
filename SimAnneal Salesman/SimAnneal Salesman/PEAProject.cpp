@@ -32,19 +32,20 @@ int _tmain(int argc, _TCHAR* argv[])
 	cout << "**                     Zadanie projektowe nr.1                               **\n";
 	cout << "**                 Projektowanie efektywnych algorytmow                      **\n ";
 	cout << "*******************************************************************************\n";
-	Generator gen;
-	SAsolver example(10);
-	example.solve(10, 2, 0.1);
-	cout << example.getsolution() << "\n";
-	string file;
+	//Generator gen;
 
-	gen.salesmanAsymetry();
-	gen.salesmanSymetry();
+	//string file;
 
+	//gen.salesmanAsymetry();
+	//gen.salesmanSymetry();
+	Salesman * testproblem = new Salesman(10);
+	SAsolver  testsolver;
 
-
-	cout << "\nHello world";
+	testsolver.solve(10, 2, 0.1, *testproblem);
+	cout << testsolver.getsolution()<< "\n";
+	
 	system("pause");
+
 	return 0;
 }
 

@@ -1,10 +1,6 @@
 #include "stdafx.h"
-#include "Generator.h"
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <ctime>
-#include <time.h>
+
+
 using namespace std;
 Generator::Generator()
 {
