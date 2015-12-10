@@ -64,7 +64,7 @@ void Salesman::load(string name,int towncount)
 	string temp;
 	int tempnum;
 	int count = 0;
-	int count_of = 4;
+	count_of = 4;
 	int p = 0;
 	int k = 0;
 	if (std::string::npos)
