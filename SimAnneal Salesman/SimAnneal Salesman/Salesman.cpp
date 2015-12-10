@@ -27,7 +27,6 @@ Salesman::~Salesman()
 }
 int Salesman::getcount()
 {
-
 	return count_of;
 }
 int Salesman::currentcost()
@@ -37,9 +36,7 @@ int Salesman::currentcost()
 	for (int i = 0; i < count_of; i++)
 	{
 		costsum += matrix[sequence[i]][sequence[i + 1]];
-
 	}
-
 	costsum += matrix[sequence[count_of]][sequence[0]];
 	count_of++;
 	return costsum;
@@ -56,14 +53,14 @@ int Salesman::getsequence(int index)
 	return sequence[index];
 }
 
-void Salesman::load(string name,int towncount)
+void Salesman::load(string name)
 {
 	std::ifstream fil;
 	string line;
 	string temp;
 	int tempnum;
 	int count = 0;
-	count_of = 4;
+	//int count_of = 45;
 	int p = 0;
 	int k = 0;
 	if (std::string::npos)
@@ -104,10 +101,10 @@ void Salesman::load(string name,int towncount)
 	}
 	
 	fil.close();
-	for (int i = 0; i < count_of; i++)
+	/*for (int i = 0; i < count_of; i++)
 	{
 		for (int j = 0; j < count_of; j++)
 			cout << matrix[i][j] << " ";
 		cout << "\n";
-	}
+	}*/
 }
