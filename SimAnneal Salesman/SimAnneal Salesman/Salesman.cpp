@@ -1,5 +1,7 @@
 #include "stdafx.h"
-
+#include <string>
+#include <sstream>
+using namespace std;
 
 
 Salesman::Salesman(int towncount)
@@ -55,19 +57,58 @@ int Salesman::getsequence(int index)
 	return sequence[index];
 }
 
-void Salesman::load(int towncount)
+void Salesman::load(string name,int towncount)
 {
 	std::ifstream fil;
-	fil.open("files//symetry//" +std::to_string(towncount) + "//" + std::to_string(rand() % 100) + ".txt");
-	fil >> count_of;
-	matrix = new int*[count_of];
-	for (int i = 0; i < count_of; i++)
-		matrix[i] = new int[count_of];
+	string line;
+	string temp;
+	int tempnum;
+	int count = 0;
+	int count_of = 4;
+	int p = 0;
+	int k = 0;
+	if (std::string::npos)
+	{
+		fil.open(name);		
+		while (std::getline(fil, line))
+		{
+			count++;
+			std::istringstream iss(line);
+			if (count == 4)
+			{
+				iss >> temp;
+				iss >> temp;
+				count_of = std::stoi(temp);
+				matrix = new int*[count_of];
+				for (int i = 0; i < count_of; i++)
+					matrix[i] = new int[count_of];
+			}
+			if (count < 8)
+			{
+			}
+			else
+			{
+				while (iss >> tempnum)
+				{
 
+					//iss >> tempnum;
+					matrix[p][k] = tempnum;
+					if (k == count_of - 1)
+					{
+						k = 0;
+						p ++;
+					}
+					else k++;
+				}
+			}			
+		}		
+	}
+	
+	fil.close();
 	for (int i = 0; i < count_of; i++)
 	{
 		for (int j = 0; j < count_of; j++)
-			fil >> matrix[i][j];
+			cout << matrix[i][j] << " ";
+		cout << "\n";
 	}
-	fil.close();
 }
