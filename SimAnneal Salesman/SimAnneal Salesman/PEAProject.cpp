@@ -38,10 +38,10 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	//gen.salesmanAsymetry();
 	//gen.salesmanSymetry();
-	Salesman * testproblem = new Salesman(10);
+	Salesman * testproblem = new Salesman("files//ftv44.atsp");
 	SAsolver  testsolver;
 
-	testsolver.solve(10, 2, 0.1, *testproblem);
+	testsolver.solve(1, 2, 0.1, *testproblem);
 	cout << testsolver.getsolution()<< "\n";
 	
 	system("pause");
