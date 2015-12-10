@@ -33,15 +33,13 @@ int _tmain(int argc, _TCHAR* argv[])
 	cout << "**                 Projektowanie efektywnych algorytmow                      **\n ";
 	cout << "*******************************************************************************\n";
 	//Generator gen;
-
 	//string file;
-
 	//gen.salesmanAsymetry();
 	//gen.salesmanSymetry();
-	Salesman * testproblem = new Salesman("files//ftv44.atsp",45);
+	Salesman * testproblem = new Salesman("files//ftv44.atsp");
 	SAsolver  testsolver;
 
-	testsolver.solve(10, 2, 0.1, *testproblem);
+	testsolver.solve(1, 2, 0.1, *testproblem);
 	cout << testsolver.getsolution()<< "\n";
 	
 	system("pause");
