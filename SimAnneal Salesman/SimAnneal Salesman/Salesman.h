@@ -1,5 +1,8 @@
 #pragma once
 #include "stdafx.h"
+#include <string.h>
+using namespace std;
+
 class Salesman
 {
 private:
@@ -12,7 +15,7 @@ public:
 	int currentcost();
 	int getsequence(int index);
 	int getcount();
-	Salesman(string name);
+	Salesman(string);
 	~Salesman();
 	int *operator[](int el) { return matrix[el]; }
 };
