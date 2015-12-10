@@ -7,12 +7,12 @@ private:
 	int * sequence;
 	int count_of;
 public:
-	void load(int towncount);
+	void load(string name);
 	void swap(int, int);
 	int currentcost();
 	int getsequence(int index);
 	int getcount();
-	Salesman(int);
+	Salesman(string name);
 	~Salesman();
 	int *operator[](int el) { return matrix[el]; }
 };
