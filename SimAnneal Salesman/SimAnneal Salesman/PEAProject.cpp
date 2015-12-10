@@ -38,7 +38,7 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	//gen.salesmanAsymetry();
 	//gen.salesmanSymetry();
-	Salesman * testproblem = new Salesman(10);
+	Salesman * testproblem = new Salesman("files//ftv44.atsp",45);
 	SAsolver  testsolver;
 
 	testsolver.solve(10, 2, 0.1, *testproblem);
