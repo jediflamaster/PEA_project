@@ -10,7 +10,7 @@ int SAsolve()
 {
 	ifstream fil;
 	//SOME EXAMPLE FROM symetry 0 file
-	fil.open("files//symetry//0.txt");
+	fil.open("files//br17.atsp");
 	int count_of;
 	fil >> count_of;
 	int **B = new int*[count_of];
