@@ -3,9 +3,9 @@
 #include <sstream>
 using namespace std;
 
-Salesman::Salesman(int towncount)
+Salesman::Salesman(string name,int towncount)
 {
-	load(towncount);
+	load(name,towncount);
 	sequence = new int[count_of];
 	for (int i = 0; i < count_of; i++)
 	{
