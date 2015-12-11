@@ -12,11 +12,12 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
+#include <Windows.h>
 #include <time.h>
 
 #include <ctime>
 #include "Salesman.h"
 #include "Generator.h"
 #include "SAsolver.h"
+#include "timer.h"
 // TODO: reference additional headers your program requires here

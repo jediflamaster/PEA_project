@@ -14,6 +14,7 @@ public:
 	void swap(int, int);
 	int currentcost();
 	int getsequence(int index);
+	void printsequence(std::ostream& out);
 	int getcount();
 	Salesman(string);
 	~Salesman();

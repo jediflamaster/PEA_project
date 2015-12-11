@@ -106,3 +106,11 @@ void Salesman::load(string name)
 		cout << "\n";
 	}*/
 }
+void Salesman::printsequence(std::ostream& out)
+{
+	for (int i = 0; i < count_of; i++)
+	{
+		out << sequence[i] << " ";
+	}
+	
+}

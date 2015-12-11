@@ -15,7 +15,7 @@ double SAsolver::pfunc(int scurrent, int snew)
 	return (pow(2.718281828, kek) / T);
 }
 
-void SAsolver::solve(double Tstart, double Tend, double falloff, Salesman &problemref)
+void SAsolver::solve(double Tstart, double Tend, double fallofffactor, double decrement, Salesman &problemref)
 {
 	T = Tstart;
 	int tempsol;
@@ -36,19 +36,23 @@ void SAsolver::solve(double Tstart, double Tend, double falloff, Salesman &probl
 		if (newsol < tempsol)
 		{
 			tempsol = newsol;
-			T -= falloff;
+		
 	
 		}
 		else 
 		{
-			if (static_cast <double> (rand()) / fRandmax < pfunc(tempsol, newsol))
+			if ((static_cast <double> (rand())) / fRandmax < pfunc(tempsol, newsol))
 			{
 				tempsol = newsol;
+			}
+			else
+			{
+				problemref.swap(a, b);
 			}
 			
 		}
 
-		T -= falloff;
+		T = T*fallofffactor - decrement;
 	}
 	solution = tempsol;
 }
