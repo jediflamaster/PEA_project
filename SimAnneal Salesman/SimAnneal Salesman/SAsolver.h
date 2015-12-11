@@ -6,13 +6,13 @@ class SAsolver {
 private:
 
 	int solution;
-	float T;
+	double T;
 
 public:
-	float pfunc(int, int);
+	double pfunc(int, int);
 	SAsolver();
 	~SAsolver();
-	void solve(float Tstart, float Tend, float falloff, Salesman &problemref);
+	void solve(double Tstart, double Tend, double falloff, Salesman &problemref);
 	void load(std::string);
 	int getsolution();
 };

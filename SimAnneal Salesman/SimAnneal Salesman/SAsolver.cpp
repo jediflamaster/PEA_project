@@ -9,17 +9,17 @@ SAsolver::~SAsolver()
 {
 
 }
-float SAsolver::pfunc(int scurrent, int snew)
+double SAsolver::pfunc(int scurrent, int snew)
 {
-	float kek = static_cast <float> (scurrent - snew);
-	return pow(0.5772156649, kek)/T;
+	double kek = static_cast <double> (scurrent - snew);
+	return (pow(2.718281828, kek) / T);
 }
 
-void SAsolver::solve(float Tstart, float Tend, float falloff, Salesman &problemref)
+void SAsolver::solve(double Tstart, double Tend, double falloff, Salesman &problemref)
 {
 	T = Tstart;
 	int tempsol;
-	float fRandmax = static_cast <float> (RAND_MAX);
+	double fRandmax = static_cast <double> (RAND_MAX);
 	tempsol = problemref.currentcost();
 	while (T >= Tend)
 	{
@@ -37,11 +37,15 @@ void SAsolver::solve(float Tstart, float Tend, float falloff, Salesman &problemr
 		{
 			tempsol = newsol;
 			T -= falloff;
-			continue;
+	
 		}
-		else if (static_cast <float> (rand()) / fRandmax < pfunc(tempsol, newsol))
+		else 
 		{
-			tempsol = newsol;
+			if (static_cast <double> (rand()) / fRandmax < pfunc(tempsol, newsol))
+			{
+				tempsol = newsol;
+			}
+			
 		}
 
 		T -= falloff;

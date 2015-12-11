@@ -10,7 +10,7 @@ int SAsolve()
 {
 	ifstream fil;
 	//SOME EXAMPLE FROM symetry 0 file
-	fil.open("files//br17.atsp");
+	fil.open("files//symetry//0.txt");
 	int count_of;
 	fil >> count_of;
 	int **B = new int*[count_of];
@@ -27,21 +27,20 @@ int SAsolve()
 }
 int _tmain(int argc, _TCHAR* argv[])
 {
+
 	srand(time(NULL));
 	cout << "*******************************************************************************\n";
 	cout << "**                     Zadanie projektowe nr.1                               **\n";
 	cout << "**                 Projektowanie efektywnych algorytmow                      **\n ";
 	cout << "*******************************************************************************\n";
 	//Generator gen;
-
 	//string file;
-
 	//gen.salesmanAsymetry();
 	//gen.salesmanSymetry();
-	Salesman * testproblem = new Salesman("files//ftv44.atsp");
+	Salesman * testproblem = new Salesman("ftv44.atsp");
 	SAsolver  testsolver;
 
-	testsolver.solve(1, 2, 0.1, *testproblem);
+	testsolver.solve(10000, 0.0002, 0.1, *testproblem);
 	cout << testsolver.getsolution()<< "\n";
 	
 	system("pause");
